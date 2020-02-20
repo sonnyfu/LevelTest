@@ -1,5 +1,7 @@
 package com.sonny.LevelTest;
 
+import static org.junit.Assert.assertArrayEquals;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -21,15 +23,27 @@ public class LetterCombinationsTests {
 	@Autowired
 	private ICombinationHelper combinationHelper; 
 	
+	ArrayList<String>  expectedArray=new ArrayList<>();
+	
     @Before
     public void init() {
     	System.out.println("开始测试-----------------");
+    	expectedArray.add("ad");
+    	expectedArray.add("ae");
+    	expectedArray.add("af");
+    	expectedArray.add("bd");
+    	expectedArray.add("be");
+    	expectedArray.add("bf");
+    	expectedArray.add("cd");
+    	expectedArray.add("ce");
+    	expectedArray.add("cf");
     }
     
 	@Test
 	public void letterCombinations() {
 		
-		ArrayList<String> res=combinationHelper.letterCombinations("234");
+		ArrayList<String> res=combinationHelper.letterCombinations("23");
+		assertArrayEquals(expectedArray.toArray(), res.toArray());
 		for(String s:res)
 			System.out.println(s);
 		System.out.println("=========");
@@ -59,17 +73,17 @@ public class LetterCombinationsTests {
 			System.out.println(s);
 		System.out.println("=========");
 		
-		res=combinationHelper.letterCombinations("0123456789");
+		res=combinationHelper.letterCombinations("0123");
 		for(String s:res)
 			System.out.println(s);		
 		System.out.println("=========");
 		
-		res=combinationHelper.letterCombinations("2034");
+		res=combinationHelper.letterCombinations("203");
 		for(String s:res)
 			System.out.println(s);	
 		System.out.println("=========");
 		
-		res=combinationHelper.letterCombinations("2340");
+		res=combinationHelper.letterCombinations("230");
 		for(String s:res)
 			System.out.println(s);	
 		System.out.println("=========");		
