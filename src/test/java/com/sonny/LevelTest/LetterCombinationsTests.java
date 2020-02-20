@@ -49,41 +49,49 @@ public class LetterCombinationsTests {
 		System.out.println("=========");
 		
 		res=combinationHelper.letterCombinations("");
+		assertArrayEquals(new Object[] {}, res.toArray());
 		for(String s:res)
 			System.out.println(s);
 		System.out.println("=========");
 		
 		res=combinationHelper.letterCombinations(null);
+		assertArrayEquals(new Object[] {}, res.toArray());
 		for(String s:res)
 			System.out.println(s);
 		System.out.println("=========");
 		
 		res=combinationHelper.letterCombinations("1");
+		assertArrayEquals(new Object[] {}, res.toArray());
 		for(String s:res)
 			System.out.println(s);
 		System.out.println("=========");
 		
 		res=combinationHelper.letterCombinations("0");
+		assertArrayEquals(new Object[] {}, res.toArray());
 		for(String s:res)
 			System.out.println(s);
 		System.out.println("=========");
 		
 		res=combinationHelper.letterCombinations("2");
+		assertArrayEquals(new Object[] {"a","b","c"}, res.toArray());
 		for(String s:res)
 			System.out.println(s);
 		System.out.println("=========");
 		
 		res=combinationHelper.letterCombinations("0123");
+		assertArrayEquals(expectedArray.toArray(), res.toArray());
 		for(String s:res)
 			System.out.println(s);		
 		System.out.println("=========");
 		
 		res=combinationHelper.letterCombinations("203");
+		assertArrayEquals(expectedArray.toArray(), res.toArray());
 		for(String s:res)
 			System.out.println(s);	
 		System.out.println("=========");
 		
 		res=combinationHelper.letterCombinations("230");
+		assertArrayEquals(expectedArray.toArray(), res.toArray());
 		for(String s:res)
 			System.out.println(s);	
 		System.out.println("=========");		
